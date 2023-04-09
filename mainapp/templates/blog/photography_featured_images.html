@@ -1,0 +1,7 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for featured_image in post.featured_images.all %}
+        <img src="{{ featured_image.image.url }}">
+    {% endfor %}
+{% endblock %}

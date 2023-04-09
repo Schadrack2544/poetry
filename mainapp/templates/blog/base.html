@@ -1,0 +1,57 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <script src="{% static 'js/main.js' %}"></script>
+    <title></title>
+</head>
+<body>
+    <div class="menu">
+        <a href="/"><img src="{% static 'img/Logo.png' %}" alt=""/></a>
+        <div class="menu-els">
+            <ul>
+                <li><a href="/">All</a></li>
+                <li><a href="/poetry">Poetry</a></li>
+                <li><a href="/short-stories">Short stories</a></li>
+                <li><a href="/opinions">Opinion</a></li>
+                <li><a href="/photography">Photography</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        {% block content %} {% endblock %}
+    </div>
+<div class="footer">
+    <img src="{%static 'img/feather.png' %}" alt="my image" height="71"width="28"> 
+    <div class="copyright" >
+        <h3>Luke Ntare</h3>
+        <span>copyright 2023.All Rights reserved</span>
+    </div>
+    <div class="email-sub" >
+        <h4>Subscribe to our newsletter</h4>
+        <div class="email">
+            <input type="email" name="email" id="email" style="width:332px" placeholder="Your email" style="background-color:transparent;">
+            <button>Subscribe</button>
+        </div>
+    </div>
+    <div class="socials">
+        <h3>Connect with us</h3>
+        <div class="social-items">
+            <a href="http://"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="http://"><i class="fa-brands fa-instagram"></i></a>
+            <a href="http://"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="http://"><i class="fa-brands fa-facebook"></i></a>
+            <a href="http://"><i class="fa-brands fa-twitter"></i></a>  
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
