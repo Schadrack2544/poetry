@@ -3,7 +3,7 @@ body {
   background-color: #232323;
   margin: 10px 0px;
   color: white;
-  font-family: "EB Garamond", serif;
+  font-family: "EB Garamond", serif !important;
   padding-top: 20px;
 }
 * {
@@ -20,9 +20,17 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  padding-bottom: 20px;
+  padding-bottom:45px;
   margin: 0px 60px;
   border-bottom: 0.75px solid #fff;
+}
+.menu.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  /* add any additional styles for the fixed header here */
 }
 .menu-els ul li {
   display: inline;
@@ -30,6 +38,7 @@ a {
 .menu-els ul li a {
   color: white;
   text-decoration: none;
+  font-size:17px;
   padding-left: 20px;
 }
 .footer {
