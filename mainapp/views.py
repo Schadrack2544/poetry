@@ -14,6 +14,7 @@ def poetry_list(request):
 
 def poetry_detail(request, pk):
     post = get_object_or_404(PoetryPost, pk=pk)
+    print(post)
     return render(request, 'blog/poetry_detail.html', {'post': post})
 
 def photography_list(request):
@@ -23,7 +24,8 @@ def photography_list(request):
 
 def photography_detail(request, pk):
     post = get_object_or_404(PhotographyPost, pk=pk)
-    return render(request, 'blog/photography_detail.html', {'post': post})
+    cat='Photography'
+    return render(request, 'blog/photography_detail.html', {'post': post,'category':cat})
 
 def photography_featured_images(request, pk):
     post = get_object_or_404(PhotographyPost, pk=pk)
