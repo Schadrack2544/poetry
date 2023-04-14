@@ -19,19 +19,21 @@ a {
 .menu {
   display: flex;
   justify-content: space-between;
+  background-color:#232323;
   align-items: end;
   padding-bottom:40px;
   margin: 0px 60px;
   border-bottom: 0.75px solid #fff;
+  z-index:999 !important;
 }
-.menu.fixed {
+/* .menu.fixed {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
   /* add any additional styles for the fixed header here */
-}
+} */
 .menu-els ul{
   display: flex;
   gap:40px;
@@ -126,8 +128,10 @@ a {
 .featured-images{
   width:80%;
  display: flex;
+ justify-content: space-between;
  flex-wrap: wrap;
- gap:10px;
+ gap:20px;
+ row-gap:20px;
  margin:0 auto;
 }
 .goBack{
@@ -143,6 +147,7 @@ margin-bottom:30px;
 
 .albums{
   display: flex;
+  justify-content: space-between;
   gap:20px;
   flex-wrap: wrap;
 }

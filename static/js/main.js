@@ -5,16 +5,17 @@
   document.querySelector('.miniText').textContent = trimmedText;
 
   // get the header element
-const header = document.querySelector('menu');
+const header = document.querySelector('.menu');
 
 // get the offset top of the header element
-const headerOffsetTop = header.offsetTop;
+//const headerOffsetTop = header.offsetTop;
 
 // add an event listener to the window object to listen for scroll events
 window.addEventListener('scroll', function() {
+ 
   // if the window has been scrolled past the offset top of the header element,
   // add the 'fixed' class to the header element; otherwise, remove it
-  if (window.pageYOffset >= headerOffsetTop) {
+  if (window.pageYOffset >= 20) {
     header.classList.add('fixed');
   } else {
     header.classList.remove('fixed');
