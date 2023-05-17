@@ -9,17 +9,19 @@ from .models import PoetryPost, PhotographyPost
 
 def poetry_list(request):
     posts = PoetryPost.objects.all().order_by('category')
-    cat='All posts'
-    return render(request, 'blog/poetry_list.html', {'posts': posts,'category': cat})
+    cat='All'
+    num_posts=posts.count()
+    return render(request, 'blog/poetry_list.html', {'posts': posts,'category': cat,'lengthOfPosts': num_posts})
 
 def poetry_detail(request, pk):
     post = get_object_or_404(PoetryPost, pk=pk)
-    print(post)
-    return render(request, 'blog/poetry_detail.html', {'post': post})
+    cat=post.category
+    return render(request, 'blog/poetry_detail.html', {'post': post,'category': cat})
 
 def photography_list(request):
     posts = PhotographyPost.objects.all()
     cat='Photography'
+    num_posts=posts.count()
     return render(request, 'blog/photography_list.html', {'posts': posts,'category':cat})
 
 def photography_detail(request, pk):
@@ -34,17 +36,20 @@ def photography_featured_images(request, pk):
 def shortstories_list(request):
     posts = PoetryPost.objects.all().filter(category='Short-Story')
     cat='Short stories'
-    return render(request, 'blog/poetry_list.html', {'posts': posts,'category': cat})
+    num_posts=posts.count()
+    return render(request, 'blog/poetry_list.html', {'posts': posts,'category': cat,'lengthOfPosts': num_posts})
 
 def opinions_list(request):
     posts = PoetryPost.objects.all().filter(category='Opinion')
     cat='Opinions'
-    return render(request, 'blog/poetry_list.html', {'posts': posts,'category': cat})
+    num_posts=posts.count()
+    return render(request, 'blog/poetry_list.html', {'posts': posts,'category': cat,'lengthOfPosts': num_posts})
 
 def poetry_only(request):
     posts = PoetryPost.objects.all().filter(category='Poetry')
     cat='Poetry'
-    return render(request, 'blog/poetry_list.html', {'posts': posts,'category': cat})
+    num_posts=posts.count()
+    return render(request, 'blog/poetry_list.html', {'posts': posts,'category': cat,'lengthOfPosts': num_posts})
 
 class PoetryPostUpdateView(UpdateView):
     model = PoetryPost

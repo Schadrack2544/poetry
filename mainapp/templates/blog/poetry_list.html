@@ -1,9 +1,16 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<h3 style="text-align: center;padding-top:59px;">{{category}}</h3>
-{% if post.length < 3 %}
-<div style="display: flex; flex-wrap:wrap;gap:20px;margin-top:66px;">
+{% if category == "All" %}
+<h3 style="text-align: center;padding-top:59px;">
+    All Post </h3>
+{%else%}
+<h3 style="text-align: center;padding-top:59px;">
+    {{category}} </h3>
+{%endif%}
+{% if lengthOfPosts < 3 %}
+
+<div style="display: flex; flex-wrap:wrap;gap:20px;margin-top:66px;" class="post-list">
     {% for post in posts %}
        <div>
            <a href="/poetry/{{post.id}}">
@@ -14,7 +21,7 @@
    {% endfor %}
 </div>
 {% else %}
-<div style="display: flex; flex-wrap:wrap;justify-content:space-between;gap:20px;margin-top:66px;">
+<div style="display: flex; flex-wrap:wrap;justify-content:space-between;gap:20px;margin-top:66px;" class="post-list">
      {% for post in posts %}
         <div>
             <a href="/poetry/{{post.id}}">

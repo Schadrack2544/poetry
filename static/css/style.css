@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap");
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
 body {
   background-color: #232323;
   margin: 10px 0px;
@@ -21,19 +26,26 @@ a {
   justify-content: space-between;
   background-color:#232323;
   align-items: end;
+  align-items:center;
   padding-bottom:40px;
   margin: 0px 60px;
   border-bottom: 0.75px solid #fff;
   z-index:999 !important;
 }
-/* .menu.fixed {
+.menu.fixed {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
   /* add any additional styles for the fixed header here */
-} */
+}
+.logo-and-toggle{
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size:40px;
+}
 .menu-els ul{
   display: flex;
   gap:40px;
@@ -87,7 +99,7 @@ a {
 }
 
 .singlepost {
-  width: 80vw;
+  width: 90vw;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -101,17 +113,27 @@ a {
   flex: 1;
 }
 .post-image {
-  width: 615px;
+ 
+  flex:1;
+  padding:40px;
 }
-.post-image img {
-  width: 100%;
-  height: 960px;
+.cat-logo{
+  z-index:1000;
+}
+.cat-logo img {
+  height: 80px !important;
+  width: 80px !important;
   object-fit: cover;
-  object-position: center center;
 }
+  .post-image img{
+    width: 80px !important;
+    height:80px !important;
+  }
+
 .post-text {
   font-size: 18px;
-  width:562px;
+  /* width:562px; */
+  flex:1;
   height:max-content;
   padding-bottom:54px;
  
@@ -181,4 +203,180 @@ gap:20px;
 justify-content:start;
 align-items: center;
 margin-bottom:30px;
+}
+
+
+/* Style the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin:0 auto;
+  display: block;
+  width: 80%;
+  max-width: 1000px;
+  height: auto;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  margin-top: -22px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+.menu-icon{
+  display: none !important;
+}
+.cat-title{
+  display: none;
+}
+@media only screen and (max-width: 840px){
+  body{
+   
+
+  }
+  .logo-and-toggle{
+   width:100% !important;
+    }
+    .logo-and-toggle a img{
+      height:60px;
+      width:100%;
+      
+    }
+  .menu{ 
+    display: flex;
+    flex-direction:column;
+    align-content: center;
+    gap:20px;
+  } 
+  .menu-icon {
+    display: block !important;
+  }
+  
+  .menu-els {
+    display: none;
+  }
+  .cat-title{
+display: block;
+text-align: center;
+margin-bottom: 20px;
+  }
+.menu-els ul{
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  align-content: center;
+}
+
+  /* .menu.responsive .menu-els {
+    display: block;
+  } */
+
+.menu-els.responsive {
+    display: block;
+    height:100vh;
+    width:100vw;
+  }
+
+
+  .menu.responsive .menu-icon {
+    display: none;
+  }
+  .post-list{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+  }
+  .post-list *{
+    flex:1;
+   
+  }
+  .post-list * img{
+    width:100%;
+   height:40vh;
+    object-fit: cover;
+  
+  }
+ .singlepost{
+  flex-direction: column-reverse;
+  gap:20px;
+ }
+ .post-image{
+  margin:0 auto !important;
+  width:90%;
+  height:32vh !important;
+ 
+ }
+ .post-image img{
+   width: 80px !important;
+   height:80px !important;
+ }
+ .featured-images{
+  margin-bottom:40px;
+ }
+ .featured-images img{
+  margin:0 auto !important;
+  width:90%;
+  height:32vh;
+  object-fit: cover;
+  object-position:center;
+ }
+ .singlephotopost{
+  display: flex;
+  flex-direction: column-reverse;
+ }
+  .footer{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  .footer .email-sub{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+  }
+  .email{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+  } 
+  .email *{
+    width:100%;
+  }
+  .modal-content {
+    margin:27vh auto;
+    
+  }
 }

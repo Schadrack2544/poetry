@@ -1,8 +1,16 @@
 
-  const maxLength = 50;
-  const text = document.querySelector('.miniText').textContent;
-  const trimmedText = text.substring(0, maxLength) + (text.length > maxLength ? '...' : '');
-  document.querySelector('.miniText').textContent = trimmedText;
+  // const maxLength = 50;
+  // const text = document.querySelector('.miniText').textContent;
+  // const trimmedText = text.substring(0, maxLength) + (text.length > maxLength ? '...' : '');
+  // document.querySelector('.miniText').textContent = trimmedText;
+  const menuIcon = document.querySelector('.menu-icon');
+  const menuEls = document.querySelector('.menu-els');
+
+menuIcon.addEventListener('click', function() {
+  // this.parentElement.classList.toggle('responsive');
+  menuEls.classList.toggle('responsive');
+  
+});
 
   // get the header element
 const header = document.querySelector('.menu');
@@ -21,39 +29,3 @@ window.addEventListener('scroll', function() {
     header.classList.remove('fixed');
   }
 });
-
-  $(document).ready(function() {
-    var currentIndex = 0;
-    var images = $('.featured-image img');
-    var maxIndex = images.length - 1;
-  
-    // show the first image
-    images.eq(currentIndex).addClass('active');
-  
-    // handle the next button click
-    $('.next-btn').click(function() {
-      images.eq(currentIndex).removeClass('active');
-  
-      if (currentIndex === maxIndex) {
-        currentIndex = 0;
-      } else {
-        currentIndex++;
-      }
-  
-      images.eq(currentIndex).addClass('active');
-    });
-  
-    // handle the prev button click
-    $('.prev-btn').click(function() {
-      images.eq(currentIndex).removeClass('active');
-  
-      if (currentIndex === 0) {
-        currentIndex = maxIndex;
-      } else {
-        currentIndex--;
-      }
-  
-      images.eq(currentIndex).addClass('active');
-    });
-  });
-  

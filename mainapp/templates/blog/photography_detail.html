@@ -13,16 +13,18 @@
   referrerpolicy="no-referrer"
 />
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
   <title>photography detail
   </title>
 </head>
 <body>
   
-<div style="margin:0px opx 20px 20px">
+<div style="margin:0px 0px 20px 20px">
   <div class="singlephotopost">
     <div class="post-text">
       <div class="goBack">
-        <a href="/poetry">
+        <a href="/photography">
           <i class="fa fa-arrow-left"></i>
           <span>Back</span>
         </a>
@@ -41,22 +43,29 @@
         </div>
       </div>
     </div>
-    <img src="{% static 'img/Photography.png' %}" height="60" width="60" style="margin-right:-120px; z-index:123">
+   
     <div
       class="post-image"
       style="background-image:url({{post.main_image.url}}); background-size:cover;background-repeat:no-repeat;background-position:center center;"
     >
+    <img src="{% static 'img/Photography.png' %}"  style="margin-right:-120px; z-index:123">
       <!-- <img src="{{ post.image.url }}"> -->
     </div>
   </div>
 
   <div class="featured-images">
     {% for featured_image in post.featured_images.all %}
-    <img src="{{ featured_image.image.url }}" width="300" height="200" />
+    <img src="{{ featured_image.image.url }}" width="300" height="200"  onclick="openModal(this);" />
     {% endfor %}
   </div>
+
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal();">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
 </div>
-
-
+<script src="{% static 'js/gallery.js' %}"></script>
 </body>
 </html>
